@@ -29,7 +29,7 @@ In your ActiveRecord models just include the line:
     include FakePrimaryKey
 
 
-Then model will return "id" as primary key
+Then model will return "id" as primary key if no value is returned by super.
 
     ModelName.primary_key #=> "id"
 
