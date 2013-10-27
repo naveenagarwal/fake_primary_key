@@ -8,9 +8,16 @@ module FakePrimaryKey
   end
 
   module ClassMethods
+    
     def primary_key
-      "id"
+      begin
+        key = super || "id"
+      rescue NoMethodError => e
+        key = "id"
+      end
+      key
     end
+
   end
 
 end
